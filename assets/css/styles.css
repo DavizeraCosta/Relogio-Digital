@@ -1,0 +1,122 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to top, #228B22, #6B8E23);
+}
+
+.fundo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    transition: background 1s ease;
+}
+
+.sol-container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sol {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, yellow 40%, orange 70%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.7);
+}
+
+.raios {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: -20px;
+    left: -20px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.3) 10%, transparent 60%);
+    border-radius: 50%;
+    animation: girar-raios 20s linear infinite;
+}
+
+@keyframes girar-raios {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.nuvens {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+}
+
+.nuvem {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    opacity: 0.8;
+    filter: blur(5px);
+    animation: mover-nuvem 40s linear infinite;
+}
+
+.nuvem:nth-child(1) {
+    top: 20px;
+    left: -200px;
+    animation-delay: 0s;
+}
+
+.nuvem:nth-child(2) {
+    top: 80px;
+    left: -300px;
+    width: 250px;
+    height: 100px;
+    animation-delay: 10s;
+}
+
+.nuvem:nth-child(3) {
+    top: 150px;
+    left: -400px;
+    width: 220px;
+    height: 90px;
+    animation-delay: 20s;
+}
+
+@keyframes mover-nuvem {
+    from {
+        left: -300px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.relogio {
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 20px;
+}
